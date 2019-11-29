@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "bdatos": {
+      "projectType": "library",
+      "root": "projects/bdatos",
+      "sourceRoot": "projects/bdatos/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/bdatos/tsconfig.lib.json",
+            "project": "projects/bdatos/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bdatos/src/test.ts",
+            "tsConfig": "projects/bdatos/tsconfig.spec.json",
+            "karmaConfig": "projects/bdatos/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/bdatos/tsconfig.lib.json",
+              "projects/bdatos/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "carrito-compra"
 }

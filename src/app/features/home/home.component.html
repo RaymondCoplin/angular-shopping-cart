@@ -1,0 +1,9 @@
+<app-carousel></app-carousel>
+
+<div class="container mt-2">
+  <div class="row align-items-center">
+    <div class="col col-sm-12 col-md-4 mt-5" *ngFor="let currentProduct of products">
+      <app-product [product]="currentProduct"></app-product>
+    </div>
+  </div>
+</div>

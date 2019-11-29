@@ -1,0 +1,22 @@
+<div class="card align-items-center" style="width: 18rem;">
+  <img [src]="product.image" class="card-img-top mt-3" style="width: 120px; height: 120px;" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title btn btn-link" [routerLink]="['product', product.id]">{{ product.name }}</h5>
+    <p class="card-text"> {{ product.price | currency }} </p>
+
+    <form [formGroup]="formProduct" (ngSubmit)="onAddItem()">
+      <div class="row">
+        <div class="col col-12">
+            <input class="text-right form-control form-control-sm" min="0" name="price"
+              type="number" formControlName="quantity" />
+        </div>
+        <div class="col col-7 mt-2">
+            <button type="submit" class="btn btn-sm btn-primary"
+              [disabled]="formProduct.invalid">Comprar</button>
+              <button type="button" class="btn btn-sm btn-danger ml-2" (click)="onRemoveItem()">&times;</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
